@@ -39,13 +39,26 @@ local servers = {
   jsonls = {},
   awk_ls = {},
   bashls = {},
-
+  ruff = {
+    init_options = {
+      settings = {
+        -- Any extra CLI arguments for `ruff` go here.
+        args = {},
+      },
+    },
+  },
   pyright = {
     settings = {
+      pyright = {
+        -- Using Ruff's import organizer
+        disableOrganizeImports = true,
+      },
       python = {
         analysis = {
           autoSearchPaths = true,
-          typeCheckingMode = "basic",
+          -- typeCheckingMode = "basic",
+          -- Ignore all files for analysis to exclusively use Ruff for linting
+          ignore = { "*" },
         },
       },
     },
