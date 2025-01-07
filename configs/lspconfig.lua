@@ -52,13 +52,19 @@ local servers = {
       pyright = {
         -- Using Ruff's import organizer
         disableOrganizeImports = true,
+        disableTaggedHints = true,
       },
       python = {
         analysis = {
           autoSearchPaths = true,
+          diagnosticSeverityOverrides = {
+            -- https://github.com/microsoft/pyright/blob/main/docs/configuration.md#type-check-diagnostics-settings
+            reportUndefinedVariable = "none",
+            reportUnusedImport = "none",
+          },
           -- typeCheckingMode = "basic",
           -- Ignore all files for analysis to exclusively use Ruff for linting
-          ignore = { "*" },
+          -- ignore = { "*" },
         },
       },
     },
