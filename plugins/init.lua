@@ -26,6 +26,7 @@ return {
         "python",
         "javascript",
         "typescript",
+        "markdown",
       },
     },
   },
